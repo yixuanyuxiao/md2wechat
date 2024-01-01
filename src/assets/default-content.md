@@ -6,7 +6,6 @@
 
 这让你在公众号创作时，把更多的时间专注于文章本身，而不是繁琐地调整文章样式。
 
-
 ### 功能
 
 - 支持序号列表和圆点列表，解决了样式会被重置的问题
@@ -18,7 +17,7 @@
 
 ### 关于 Markdown
 
-1. Markdown 是一种轻量级标记语言，能将文本换成有效的 XHTML(或者HTML) 文档
+1. Markdown 是一种轻量级标记语言，能将文本换成有效的 XHTML(或者 HTML) 文档
 2. Markdown 强大之处，在于可以用一套格式，在所有支持 Markdown 的编辑器中转换成发布样式，做到最大化兼容，不需要担心复制到不同编辑器中样式被破坏
 3. 正如你右侧看到的这样，Markdown 被转换成了微信支持的样式，同样你可以在一字不改的情况下，在 Github 等平台上转换类似的样式
 4. 学习 Markdown 的语法，可以查看 [Markdown 语法入门手册](https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html)
@@ -33,17 +32,17 @@
 
 用法有以下几种：
 
-* 世界{せかい}
-* 小夜時雨{さ・よ・しぐれ}
-* 食べる{たべる}
-* 丧心病狂{gàn・de・piào・liang}
+- 世界{せかい}
+- 小夜時雨{さ・よ・しぐれ}
+- 食べる{たべる}
+- 丧心病狂{gàn・de・piào・liang}
 
 ### 图片
 
 接下来是一张图片。你可以用自己图床，也可以上传到微信媒体库再把图片 URL
 粘贴回来，或者编辑好以后，在公众号里插入图片。
 
-![这里可以写图片描述](https://static.zkqiang.cn/images/20191019181145.JPG-slim)
+![这里可以写图片描述](https://yanxi123.com/post/2023/12/year-summary/img/20231231214441.png)
 
 如果使用图床链接的话，有可能复制后图片不能被上传，需要手动在微信重新上传替换。
 
@@ -88,10 +87,10 @@ inline code `{code: 0}`
 表格无法使用自定义样式，暂时没找到解决途径
 
 | Header 1 | Header 2 |
-| --- | --- |
-| Key 1 | Value 1 |
-| Key 2 | Value 2 |
-| Key 3 | Value 3 |
+| -------- | -------- |
+| Key 1    | Value 1  |
+| Key 2    | Value 2  |
+| Key 3    | Value 3  |
 
 ### 超链接
 
@@ -99,10 +98,8 @@ inline code `{code: 0}`
 
 例如：
 
-[这是一篇公众号文章](https://mp.weixin.qq.com/s/ahpV7Poj5wHmtUP6vqy3gg)
+[这是一篇公众号文章](https://mp.weixin.qq.com/s/4Ctc_AvmgtJVIvIYMvXKzg)
 
-[这是我的博客地址](http://zkqiang.cn)
+[这是我的博客地址](https://yanxi123.com/)
 
-[通过引号设置引用名](http://prod.zkqiang.cn/wxeditor "这是自定义的引用名")
-
-[本项目是 Fork 自 Lyric 原项目后的二次开发，感谢他的贡献！](https://github.com/lyricat/wechat-format "原项目代码库")
+[通过引号设置引用名](https://yanxi123.com/md2wechat/ "这是自定义的引用名")

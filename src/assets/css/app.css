@@ -4,11 +4,18 @@
   padding: 0;
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
   font-family: inherit;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
 }
 
@@ -16,18 +23,20 @@ em {
   font-style: normal !important;
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  font-family: 'PingFang SC', BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+  font-family: "PingFang SC", BlinkMacSystemFont, Roboto, "Helvetica Neue",
+    sans-serif;
 }
 
 .copy-button {
   text-decoration: none;
-  color: #ff3502
+  color: #ff3502;
 }
 
 .el-message__icon {
-  display: none
+  display: none;
 }
 
 .container {
@@ -52,9 +61,7 @@ html, body {
 }
 
 .web-icon {
-  width: auto;
-  height: 1.5rem;
-  vertical-align: middle;
+  margin-right: 10px;
 }
 
 #editor {
@@ -106,7 +113,7 @@ section {
 
 .preview {
   margin: 0 -20px;
-  width: 375px;
+  width: 428px;
   padding: 20px;
   font-size: 14px;
   outline: none;
@@ -140,7 +147,8 @@ section {
   font-size: 14px;
   padding: 20px;
   width: 100%;
-  font-family: 'PingFang SC', BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+  font-family: "PingFang SC", BlinkMacSystemFont, Roboto, "Helvetica Neue",
+    sans-serif;
 }
 
 /* ele ui */
@@ -149,7 +157,8 @@ section {
 }
 
 /*wechat code block*/
-.rich_media_content .code-snippet *, .rich_media_content .code-snippet__fix * {
+.rich_media_content .code-snippet *,
+.rich_media_content .code-snippet__fix * {
   max-width: 1000% !important;
 }
 

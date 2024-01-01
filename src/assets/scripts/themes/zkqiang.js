@@ -1,8 +1,8 @@
-let defaultTheme = {
+let zkqiangTheme = {
   BASE: {
-    "text-align": "justify",
+    "text-align": "left",
     color: "#3f3f3f",
-    "line-height": "1.6",
+    "line-height": "1.75",
   },
   BASE_BLOCK: {
     margin: "1em 8px",
@@ -42,8 +42,8 @@ let defaultTheme = {
       margin: "2em 8px 0.5em 8px",
     },
     p: {
-      margin: "1.5em 0",
-      "letter-spacing": ".034em",
+      margin: "1.5em 8px",
+      "letter-spacing": "0.1em",
     },
     blockquote: {
       "font-style": "normal",
@@ -55,7 +55,7 @@ let defaultTheme = {
       margin: "2em 8px",
     },
     blockquote_p: {
-      "letter-spacing": ".034em",
+      "letter-spacing": "0.1em",
       color: "rgb(80, 80, 80)",
       "font-family":
         "PingFangSC-light, PingFangTC-light, Open Sans, Helvetica Neue, sans-serif",
@@ -115,7 +115,7 @@ let defaultTheme = {
       "border-radius": "4px",
     },
     link: {
-      color: "black",
+      color: "#009926",
     },
     wx_link: {
       color: "#0080ff",
@@ -123,7 +123,7 @@ let defaultTheme = {
       "border-bottom": "1px solid #d1e9ff",
     },
     strong: {
-      // color: "#ff5f2e",
+      color: "#ff5f2e",
       "font-weight": "bold",
     },
     table: {

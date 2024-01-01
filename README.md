@@ -4,7 +4,7 @@
 
 这让你在公众号创作时，把更多的时间专注于文章本身，而不是繁琐地调整文章样式。
 
-[在线使用](http://prod.zkqiang.cn/wxeditor)
+[在线使用](https://yanxi123.com/md2wechat/)
 
 ## 功能
 
@@ -14,8 +14,8 @@
 - 支持日语注音假名、汉语拼音样式
 - 支持不同于微信的代码配色方案
 
-## 关于
+## Github 源码
 
-本仓库 Fork 自 [yricat/wechat-format](https://github.com/lyricat/wechat-format)，并根据自用需求进行修改开发。
+[本仓库](https://github.com/yanxi123-com/md2wechat) Fork 自 [zkqiang/wechat-mdeditor](https://github.com/zkqiang/wechat-mdeditor) 和 [lyricat/wechat-format](https://github.com/lyricat/wechat-format)，并根据自用需求进行修改开发。
 
-感谢他的创意和贡献！
+感谢他们的创意和贡献！
