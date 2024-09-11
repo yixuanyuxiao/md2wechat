@@ -172,13 +172,9 @@ let WxRenderer = function (opts) {
       return `<p ${getStyles("ol")}>${text}</p>`;
     };
     renderer.image = function (href, title, text) {
-      let subText = "";
-      if (text) {
-        subText = `<figcaption ${getStyles("figcaption")}>${text}</figcaption>`;
-      }
-      let figureStyles = getStyles("figure");
-      let imgStyles = getStyles(ENV_STRETCH_IMAGE ? "image" : "image_org");
-      return `<figure ${figureStyles}><img ${imgStyles} src="${href}" title="${title}" alt="${text}"/>${subText}</figure>`;
+      return `<img ${getStyles(
+        ENV_STRETCH_IMAGE ? "image" : "image_org"
+      )} src="${href}" title="${title}" alt="${text}"/>`;
     };
     renderer.link = function (href, title, text) {
       if (href.indexOf("https://mp.weixin.qq.com") === 0) {
