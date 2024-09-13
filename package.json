@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "chokidar 'src/assets/less/**/*.less' -c 'lessc src/assets/less/themes/index.less src/assets/css/themes.css'"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "less": "^4.2.0"
+  }
+}

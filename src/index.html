@@ -36,6 +36,8 @@
       href="libs/prettify/color-themes/github-v2.min.css"
     />
 
+    <link rel="stylesheet" href="./assets/css/themes.css" />
+
     <link rel="stylesheet" href="assets/css/app.css" />
   </head>
   <body>
@@ -170,7 +172,11 @@
                   >，然后在公众号编辑器粘贴
                 </div>
                 <div class="preview" contenteditable="true">
-                  <div id="output" v-html="output"></div>
+                  <div
+                    id="output"
+                    v-html="output"
+                    class="themes default size17 fonts-cx"
+                  ></div>
                 </div>
               </section>
             </el-col>

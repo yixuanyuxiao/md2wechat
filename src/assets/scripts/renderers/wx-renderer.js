@@ -5,51 +5,9 @@ let WxRenderer = function (opts) {
 
   let footnotes = [];
   let footnoteIndex = 0;
-  let styleMapping = null;
-
-  let CODE_FONT_FAMILY = "Menlo, Operator Mono, Consolas, Monaco, monospace";
 
   let merge = function (base, extend) {
     return Object.assign({}, base, extend);
-  };
-
-  this.buildTheme = function (themeTpl) {
-    let mapping = {};
-    let base = merge(themeTpl.BASE, {
-      "font-family": this.opts.fonts,
-      "font-size": this.opts.size,
-    });
-    let base_block = merge(base, {});
-    for (let ele in themeTpl.inline) {
-      if (themeTpl.inline.hasOwnProperty(ele)) {
-        let style = themeTpl.inline[ele];
-        if (ele === "codespan") {
-          style["font-family"] = CODE_FONT_FAMILY;
-          style["white-space"] = "normal";
-        }
-        mapping[ele] = merge(base, style);
-      }
-    }
-    for (let ele in themeTpl.block) {
-      if (themeTpl.block.hasOwnProperty(ele)) {
-        let style = themeTpl.block[ele];
-        if (ele === "code") {
-          style["font-family"] = CODE_FONT_FAMILY;
-        }
-        mapping[ele] = merge(base_block, style);
-      }
-    }
-    return mapping;
-  };
-
-  let getStyles = function (tokenName, addition) {
-    let arr = [];
-    let dict = styleMapping[tokenName];
-    if (!dict) return "";
-    for (const key in dict) {
-      arr.push(key + ":" + dict[key]);
-    }
-    return `style="${arr.join(";") + (addition || "")}"`;
   };
 
   let addFootnote = function (title, link) {
@@ -65,9 +23,9 @@ let WxRenderer = function (opts) {
       }
       return `<code style="font-size: 90%; opacity: 0.6;">[${x[0]}]</code> ${x[1]}: <i>${x[2]}</i><br/>`;
     });
-    return `<h3 ${getStyles("h3")}>本文内链接</h3><p ${getStyles(
-      "footnotes"
-    )}>${footnoteArray.join("\n")}</p>`;
+    return `<h3}>本文内链接</h3><p class="footnotes">${footnoteArray.join(
+      "\n"
+    )}</p>`;
   };
 
   this.buildAddition = function () {
@@ -100,28 +58,28 @@ let WxRenderer = function (opts) {
     footnotes = [];
     footnoteIndex = 0;
 
-    styleMapping = this.buildTheme(this.opts.theme);
+    // styleMapping = this.buildTheme(this.opts.theme);
     let renderer = new marked.Renderer();
     FuriganaMD.register(renderer);
 
     renderer.heading = function (text, level) {
       switch (level) {
         case 1:
-          return `<h1 ${getStyles("h1")}>${text}</h1>`;
+          return `<h1>${text}</h1>`;
         case 2:
-          return `<h2 ${getStyles("h2")}>${text}</h2>`;
+          return `<h2>${text}</h2>`;
         case 3:
-          return `<h3 ${getStyles("h3")}>${text}</h3>`;
+          return `<h3>${text}</h3>`;
         default:
-          return `<h4 ${getStyles("h4")}>${text}</h4>`;
+          return `<h4>${text}</h4>`;
       }
     };
     renderer.paragraph = function (text) {
-      return `<p ${getStyles("p")}>${text}</p>`;
+      return `<p>${text}</p>`;
     };
     renderer.blockquote = function (text) {
-      text = text.replace(/<p.*?>/, `<p ${getStyles("blockquote_p")}>`);
-      return `<blockquote ${getStyles("blockquote")}>${text}</blockquote>`;
+      text = text.replace(/<p.*?>/, `<p class="blockquote_p">`);
+      return `<blockquote}>${text}</blockquote>`;
     };
     renderer.code = function (text, infoString) {
       text = text.replace(/</g, "&lt;");
@@ -151,62 +109,58 @@ let WxRenderer = function (opts) {
       );
     };
     renderer.codespan = function (text, infoString) {
-      return `<code ${getStyles("codespan")}>${text}</code>`;
+      return `<code class="codespan">${text}</code>`;
     };
     renderer.listitem = function (text) {
-      return `<span ${getStyles(
-        "listitem"
-      )}><span style="margin-right: 10px;"><%s/></span>${text}</span>`;
+      return `<span class="listitem"><span style="margin-right: 10px;"><%s/></span>${text}</span>`;
     };
     renderer.list = function (text, ordered, start) {
       text = text.replace(/<\/*p.*?>/g, "");
       let segments = text.split(`<%s/>`);
       if (!ordered) {
         text = segments.join("•");
-        return `<p ${getStyles("ul")}>${text}</p>`;
+        return `<p class="ul">${text}</p>`;
       }
       text = segments[0];
       for (let i = 1; i < segments.length; i++) {
         text = text + i + "." + segments[i];
       }
-      return `<p ${getStyles("ol")}>${text}</p>`;
+      return `<p class="ol">${text}</p>`;
     };
     renderer.image = function (href, title, text) {
-      return `<img ${getStyles(
+      return `<img class=${
         ENV_STRETCH_IMAGE ? "image" : "image_org"
-      )} src="${href}" title="${title}" alt="${text}"/>`;
+      } src="${href}" title="${title}" alt="${text}"/>`;
     };
     renderer.link = function (href, title, text) {
       if (href.indexOf("https://mp.weixin.qq.com") === 0) {
-        return `<a href="${href}" title="${title || text}" ${getStyles(
-          "wx_link"
-        )}>${text}</a>`;
+        return `<a href="${href}" title="${
+          title || text
+        }" class="wx_link">${text}</a>`;
       } else if (href === text) {
         return text;
       } else {
         if (ENV_USE_REFERENCES) {
           let ref = addFootnote(title || text, href);
-          return `<span ${getStyles("link")}>${text}<sup>[${ref}]</sup></span>`;
+          return `<span class="link">${text}<sup>[${ref}]</sup></span>`;
         } else {
-          return `<a href="${href}" title="${title || text}" ${getStyles(
-            "link"
-          )}>${text}</a>`;
+          return `<a href="${href}" title="${
+            title || text
+          }" class="link">${text}</a>`;
         }
       }
     };
     renderer.strong = function (text) {
-      return `<strong ${getStyles("strong")}>${text}</strong>`;
+      return `<strong>${text}</strong>`;
     };
     renderer.em = function (text) {
-      return `<span ${getStyles("p", ";font-style: italic;")}>${text}</span>`;
+      return `<span style="font-style: italic;")}>${text}</span>`;
     };
     renderer.table = function (header, body) {
-      return `<table class="preview-table"><thead ${getStyles(
-        "thead"
-      )}>${header}</thead><tbody>${body}</tbody></table>`;
+      return `<table class="preview-table"><thead>${header}</thead><tbody>${body}</tbody></table>`;
     };
     renderer.tablecell = function (text, flags) {
-      return `<td ${getStyles("td")}>${text}</td>`;
+      return `<td>${text}</td>`;
     };
     renderer.hr = function () {
       return `<hr style="border-style: solid;border-width: 1px 0 0;border-color: rgba(0,0,0,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);">`;

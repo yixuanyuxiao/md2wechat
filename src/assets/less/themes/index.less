@@ -1,0 +1,38 @@
+.themes.default {
+  @import "./default.less";
+}
+
+.themes {
+  .codepsan,
+  code {
+    font-family: Menlo, Operator Mono, Consolas, Monaco, monospace;
+  }
+  .codepsan {
+    white-space: normal;
+  }
+
+  // 无衬线
+  &.fonts-no-cx {
+    font-family: -apple-system-font, BlinkMacSystemFont, Helvetica Neue,
+      PingFang SC, Hiragino Sans GB, Microsoft YaHei UI, Microsoft YaHei, Arial,
+      sans-serif;
+  }
+  // 衬线
+  &.fonts-cx {
+    font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light,
+      "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+
+  &.size14 * {
+    font-size: 14px;
+  }
+  &.size15 * {
+    font-size: 15px;
+  }
+  &.size16 * {
+    font-size: 16px;
+  }
+  &.size17 * {
+    font-size: 17px;
+  }
+}

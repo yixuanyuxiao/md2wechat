@@ -1,0 +1,179 @@
+.themes.default {
+  /* BASE styles */
+  /* BASE_BLOCK styles */
+  /* Block Elements */
+  /* Inline Elements */
+}
+.themes.default h1,
+.themes.default h2,
+.themes.default h3,
+.themes.default h4,
+.themes.default p,
+.themes.default blockquote,
+.themes.default .blockquote_p,
+.themes.default .image,
+.themes.default .image_org,
+.themes.default .ol,
+.themes.default .ul,
+.themes.default .footnotes,
+.themes.default .listitem,
+.themes.default .codespan,
+.themes.default .link,
+.themes.default .wx_link,
+.themes.default strong,
+.themes.default table,
+.themes.default thead,
+.themes.default td {
+  text-align: justify;
+  color: #3f3f3f;
+  line-height: 1.6;
+}
+.themes.default h1,
+.themes.default h2,
+.themes.default h3,
+.themes.default h4,
+.themes.default p,
+.themes.default blockquote,
+.themes.default .blockquote_p,
+.themes.default .image,
+.themes.default .image_org,
+.themes.default .ol,
+.themes.default .ul,
+.themes.default .footnotes {
+  margin: 1em 8px;
+}
+.themes.default h1 {
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: bold;
+  display: table;
+  margin: 2em auto 1em auto;
+  padding: 0 1em;
+  border-bottom: 1px solid #f83929;
+}
+.themes.default h2 {
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: bold;
+  display: table;
+  margin: 4em auto 2em auto;
+  padding: 0 1em;
+  border-bottom: 1px solid #f83929;
+}
+.themes.default h3 {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 2em 8px 0.75em 0;
+  padding-bottom: 0.1em;
+  padding-left: 8px;
+  border-left: 4px solid #f83929;
+}
+.themes.default h4 {
+  font-weight: bold;
+  font-size: 1em;
+  margin: 2em 8px 0.5em 8px;
+}
+.themes.default p {
+  margin: 1.5em 0;
+  letter-spacing: 0.034em;
+}
+.themes.default blockquote {
+  font-style: normal;
+  border-left: none;
+  padding: 1em;
+  border-radius: 4px;
+  color: #feeeed;
+  background: rgba(27, 31, 35, 0.05);
+  margin: 2em 8px;
+}
+.themes.default .blockquote_p {
+  letter-spacing: 0.034em;
+  color: #505050;
+  font-family: PingFangSC-light, PingFangTC-light, Open Sans, Helvetica Neue, sans-serif;
+  font-size: 1em;
+  display: inline;
+}
+.themes.default .image {
+  border-radius: 4px;
+  display: block;
+  margin: 2em auto;
+  width: 100%;
+}
+.themes.default .image_org {
+  border-radius: 4px;
+  display: block;
+}
+.themes.default .ol {
+  margin-left: 0;
+  padding-left: 1em;
+}
+.themes.default .ul {
+  margin-left: 0;
+  padding-left: 1em;
+  list-style: circle;
+}
+.themes.default .footnotes {
+  margin: 0.5em 8px;
+  font-size: 80%;
+}
+.themes.default .listitem {
+  text-indent: -1em;
+  display: block;
+  margin: 0.5em 8px;
+}
+.themes.default .codespan {
+  font-size: 90%;
+  color: #d14;
+  background: rgba(27, 31, 35, 0.05);
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+.themes.default .link {
+  color: black;
+}
+.themes.default .wx_link {
+  color: #0080ff;
+  text-decoration: none;
+  border-bottom: 1px solid #d1e9ff;
+}
+.themes.default strong {
+  font-weight: bold;
+}
+.themes.default table {
+  border-collapse: collapse;
+  text-align: center;
+  margin: 1em 8px;
+}
+.themes.default thead {
+  background: rgba(0, 0, 0, 0.05);
+}
+.themes.default td {
+  font-size: 80%;
+  border: 1px solid #dfdfdf;
+  padding: 0.25em 0.5em;
+}
+.themes .codepsan,
+.themes code {
+  font-family: Menlo, Operator Mono, Consolas, Monaco, monospace;
+}
+.themes .codepsan {
+  white-space: normal;
+}
+.themes.fonts-no-cx {
+  font-family: -apple-system-font, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei UI, Microsoft YaHei, Arial, sans-serif;
+}
+.themes.fonts-cx {
+  font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.themes.size14 * {
+  font-size: 14px;
+}
+.themes.size15 * {
+  font-size: 15px;
+}
+.themes.size16 * {
+  font-size: 16px;
+}
+.themes.size17 * {
+  font-size: 17px;
+}

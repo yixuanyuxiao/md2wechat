@@ -143,3 +143,5 @@ Temporary Items
 .idea/misc.xml
 
 /content
+
+node_modules
