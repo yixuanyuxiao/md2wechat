@@ -198,7 +198,7 @@ let WxRenderer = function (opts) {
       return `<strong ${getStyles("strong")}>${text}</strong>`;
     };
     renderer.em = function (text) {
-      return `<p ${getStyles("p", ";font-style: italic;")}>${text}</p>`;
+      return `<span ${getStyles("p", ";font-style: italic;")}>${text}</span>`;
     };
     renderer.table = function (header, body) {
       return `<table class="preview-table"><thead ${getStyles(
