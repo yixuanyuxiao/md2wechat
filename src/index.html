@@ -36,7 +36,12 @@
       href="libs/prettify/color-themes/github-v2.min.css"
     />
 
-    <link rel="stylesheet" href="./assets/css/themes.css" />
+    <!-- <link rel="stylesheet" href="./assets/css/themes.css" /> -->
+    <link
+      rel="stylesheet/less"
+      type="text/css"
+      href="./assets/less/themes/index.less"
+    />
 
     <link rel="stylesheet" href="assets/css/app.css" />
   </head>
@@ -84,7 +89,6 @@
                 v-model="currentFont"
                 size="mini"
                 placeholder="选择字体"
-                @change="fontChanged"
               >
                 <el-option
                   v-for="font in builtinFonts"
@@ -98,30 +102,11 @@
                 </el-option>
               </el-select>
             </el-form-item>
-            <el-form-item label="基础大小">
-              <el-select
-                v-model="currentSize"
-                size="mini"
-                placeholder="选择段落字体大小"
-                @change="sizeChanged"
-              >
-                <el-option
-                  v-for="size in sizeOption"
-                  :key="size.value"
-                  :label="size.label"
-                  :value="size.value"
-                >
-                  <span class="select-item-left">{{ size.label }}</span>
-                  <span class="select-item-right">{{ size.desc }}</span>
-                </el-option>
-              </el-select>
-            </el-form-item>
             <el-form-item label="主题">
               <el-select
                 v-model="currentTheme"
                 size="mini"
                 placeholder="选择主题样式"
-                @change="themeChanged"
               >
                 <el-option
                   v-for="theme in themeOption"
@@ -150,6 +135,11 @@
                   >阎曦的小站</el-link
                 ></el-dropdown-item
               >
+              <el-dropdown-item
+                ><el-link @click="setDefaultMarkdown"
+                  >设置默认内容</el-link
+                ></el-dropdown-item
+              >
             </el-dropdown-menu>
           </el-dropdown>
         </el-header>
@@ -175,7 +165,7 @@
                   <div
                     id="output"
                     v-html="output"
-                    class="themes default size17 fonts-cx"
+                    :class="['themes', currentTheme, currentFont]"
                   ></div>
                 </div>
               </section>
@@ -230,13 +220,17 @@
     <script src="libs/sync-scroll.js"></script>
     <script src="libs/FuriganaMD.js"></script>
 
-    <script src="assets/scripts/themes/default.js"></script>
-    <script src="assets/scripts/themes/lyric.js"></script>
-    <script src="assets/scripts/themes/zkqiang.js"></script>
-    <script src="assets/scripts/themes/lupeng.js"></script>
     <script src="assets/scripts/renderers/wx-renderer.js"></script>
     <script src="assets/scripts/editor.js"></script>
     <script src="assets/scripts/loading.js"></script>
+
+    <script>
+      less = { env: "development" };
+    </script>
+    <script src="assets/scripts/less.min.js"></script>
+    <script>
+      less.watch();
+    </script>
 
     <script
       charset="UTF-8"

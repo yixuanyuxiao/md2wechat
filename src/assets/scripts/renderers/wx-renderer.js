@@ -1,5 +1,4 @@
-let WxRenderer = function (opts) {
-  this.opts = opts;
+let WxRenderer = function () {
   let ENV_USE_REFERENCES = true;
   let ENV_STRETCH_IMAGE = true;
 
@@ -23,7 +22,7 @@ let WxRenderer = function (opts) {
       }
       return `<code style="font-size: 90%; opacity: 0.6;">[${x[0]}]</code> ${x[1]}: <i>${x[2]}</i><br/>`;
     });
-    return `<h3}>本文内链接</h3><p class="footnotes">${footnoteArray.join(
+    return `<h3>本文内链接</h3><p class="footnotes">${footnoteArray.join(
       "\n"
     )}</p>`;
   };
@@ -46,10 +45,6 @@ let WxRenderer = function (opts) {
     );
   };
 
-  this.setOptions = function (newOpts) {
-    this.opts = merge(this.opts, newOpts);
-  };
-
   this.hasFootnotes = function () {
     return footnotes.length !== 0;
   };
@@ -58,28 +53,26 @@ let WxRenderer = function (opts) {
     footnotes = [];
     footnoteIndex = 0;
 
-    // styleMapping = this.buildTheme(this.opts.theme);
     let renderer = new marked.Renderer();
     FuriganaMD.register(renderer);
 
     renderer.heading = function (text, level) {
       switch (level) {
         case 1:
-          return `<h1>${text}</h1>`;
+          return `<h1><span class="prefix"></span><span class="content">${text}</span><span class="suffix"></span></h1>`;
         case 2:
-          return `<h2>${text}</h2>`;
+          return `<h2><span class="prefix"></span><span class="content">${text}</span><span class="suffix"></span></h2>`;
         case 3:
-          return `<h3>${text}</h3>`;
+          return `<h3><span class="prefix"></span><span class="content">${text}</span><span class="suffix"></span></h3>`;
         default:
-          return `<h4>${text}</h4>`;
+          return `<h4><span class="prefix"></span><span class="content">${text}</span><span class="suffix"></span></h4>`;
       }
     };
     renderer.paragraph = function (text) {
       return `<p>${text}</p>`;
     };
     renderer.blockquote = function (text) {
-      text = text.replace(/<p.*?>/, `<p class="blockquote_p">`);
-      return `<blockquote}>${text}</blockquote>`;
+      return `<blockquote>${text}</blockquote>`;
     };
     renderer.code = function (text, infoString) {
       text = text.replace(/</g, "&lt;");
@@ -119,13 +112,13 @@ let WxRenderer = function (opts) {
       let segments = text.split(`<%s/>`);
       if (!ordered) {
         text = segments.join("•");
-        return `<p class="ul">${text}</p>`;
+        return `<div class="ul">${text}</div>`;
       }
       text = segments[0];
       for (let i = 1; i < segments.length; i++) {
         text = text + i + "." + segments[i];
       }
-      return `<p class="ol">${text}</p>`;
+      return `<div class="ol">${text}</div>`;
     };
     renderer.image = function (href, title, text) {
       return `<img class=${
@@ -133,7 +126,10 @@ let WxRenderer = function (opts) {
       } src="${href}" title="${title}" alt="${text}"/>`;
     };
     renderer.link = function (href, title, text) {
-      if (href.indexOf("https://mp.weixin.qq.com") === 0) {
+      if (
+        href.indexOf("https://mp.weixin.qq.com") === 0 ||
+        href.indexOf("#") === 0
+      ) {
         return `<a href="${href}" title="${
           title || text
         }" class="wx_link">${text}</a>`;
@@ -157,13 +153,13 @@ let WxRenderer = function (opts) {
       return `<span style="font-style: italic;")}>${text}</span>`;
     };
     renderer.table = function (header, body) {
-      return `<table class="preview-table"><thead>${header}</thead><tbody>${body}</tbody></table>`;
+      return `<table><thead>${header}</thead><tbody>${body}</tbody></table>`;
     };
     renderer.tablecell = function (text, flags) {
       return `<td>${text}</td>`;
     };
     renderer.hr = function () {
-      return `<hr style="border-style: solid;border-width: 1px 0 0;border-color: rgba(0,0,0,0.1);-webkit-transform-origin: 0 0;-webkit-transform: scale(1, 0.5);transform-origin: 0 0;transform: scale(1, 0.5);">`;
+      return `<hr />`;
     };
     return renderer;
   };

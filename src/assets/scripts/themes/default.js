@@ -7,7 +7,6 @@ let defaultTheme = {
   BASE_BLOCK: {
     margin: "1em 8px",
   },
-  // block element
   block: {
     h1: {
       "font-size": "1.2em",

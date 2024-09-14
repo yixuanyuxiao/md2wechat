@@ -2,7 +2,6 @@ let app = new Vue({
   el: "#app",
   data: function () {
     let d = {
-      aboutOutput: "",
       output: "",
       source: "",
       editorThemes: [
@@ -14,33 +13,24 @@ let app = new Vue({
       builtinFonts: [
         {
           label: "无衬线",
-          value:
-            "-apple-system-font,BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB , Microsoft YaHei UI , Microsoft YaHei ,Arial,sans-serif",
+          value: "fonts-no-cx",
         },
         {
           label: "衬线",
-          value:
-            "Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif",
+          value: "fonts-cx",
         },
       ],
       sizeOption: [
-        { label: "17px", value: "17px", desc: "很大-默认" },
-        { label: "16px", value: "16px", desc: "稍大" },
-        { label: "15px", value: "15px", desc: "正常" },
-        { label: "14px", value: "14px", desc: "稍小" },
+        { label: "17px", value: "size17", desc: "很大-默认" },
+        { label: "16px", value: "size16", desc: "稍大" },
+        { label: "15px", value: "size15", desc: "正常" },
+        { label: "14px", value: "size14", desc: "稍小" },
       ],
       themeOption: [
-        { label: "default", value: "default", author: "阎曦" },
-        { label: "zkqiang", value: "zkqiang", author: "张凯强" },
-        { label: "lyric", value: "lyric", author: "Lyric" },
-        { label: "lupeng", value: "lupeng", author: "鲁鹏" },
+        { label: "默认主题", value: "default", author: "" },
+        { label: "橙心", value: "chengxin", author: "zhning12" },
+        { label: "墨黑", value: "mohei", author: "Mayandev" },
       ],
-      styleThemes: {
-        default: defaultTheme,
-        zkqiang: zkqiangTheme,
-        lyric: lyricTheme,
-        lupeng: lupengTheme,
-      },
       aboutDialogVisible: false,
     };
     d.currentEditorTheme = d.editorThemes[0].value;
@@ -62,24 +52,23 @@ let app = new Vue({
       self.refresh();
       self.saveEditorContent();
     });
-    this.wxRenderer = new WxRenderer({
-      theme: this.styleThemes.default,
-      fonts: this.currentFont,
-      size: this.currentSize,
-    });
+    this.wxRenderer = new WxRenderer();
     // 如果有编辑内容被保存则读取，否则加载默认文档
     if (localStorage.getItem("__editor_content")) {
       this.editor.setValue(localStorage.getItem("__editor_content"));
     } else {
+      this.setDefaultMarkdown();
+    }
+  },
+  methods: {
+    setDefaultMarkdown: function () {
       axios({
         method: "get",
         url: "./assets/default-content.md",
       }).then(function (resp) {
-        self.editor.setValue(resp.data);
+        app.editor.setValue(resp.data);
       });
-    }
-  },
-  methods: {
+    },
     renderWeChat: function (source) {
       let output = marked(source, { renderer: this.wxRenderer.getRenderer() });
       if (this.wxRenderer.hasFootnotes()) {
@@ -94,25 +83,6 @@ let app = new Vue({
     },
     editorThemeChanged: function (editorTheme) {
       this.editor.setOption("theme", editorTheme);
-    },
-    fontChanged: function (fonts) {
-      this.wxRenderer.setOptions({
-        fonts: fonts,
-      });
-      this.refresh();
-    },
-    sizeChanged: function (size) {
-      this.wxRenderer.setOptions({
-        size: size,
-      });
-      this.refresh();
-    },
-    themeChanged: function (themeName) {
-      let themeObject = this.styleThemes[themeName];
-      this.wxRenderer.setOptions({
-        theme: themeObject,
-      });
-      this.refresh();
     },
     // 刷新右侧预览
     refresh: function () {
