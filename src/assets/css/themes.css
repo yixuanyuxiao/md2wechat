@@ -183,7 +183,6 @@
 .themes h4,
 .themes p,
 .themes blockquote,
-.themes .image,
 .themes .ol,
 .themes .ul,
 .themes .footnotes,
@@ -205,7 +204,6 @@
 .themes h4,
 .themes p,
 .themes blockquote,
-.themes .image,
 .themes .ol,
 .themes .ul,
 .themes .footnotes {
@@ -258,11 +256,22 @@
 .themes strong {
   font-weight: bold;
 }
-.themes .image {
-  border-radius: 4px;
+.themes figure {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.themes figure img {
   display: block;
-  margin: 2em auto;
-  width: 100%;
+  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+.themes figure figcaption {
+  margin-top: 5px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
 }
 .themes blockquote {
   display: block;

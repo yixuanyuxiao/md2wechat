@@ -69,6 +69,9 @@ let WxRenderer = function () {
       }
     };
     renderer.paragraph = function (text) {
+      if (text.indexOf("<figure>") === 0) {
+        return text;
+      }
       return `<p>${text}</p>`;
     };
     renderer.blockquote = function (text) {
@@ -121,9 +124,9 @@ let WxRenderer = function () {
       return `<div class="ol">${text}</div>`;
     };
     renderer.image = function (href, title, text) {
-      return `<img class=${
-        ENV_STRETCH_IMAGE ? "image" : "image_org"
-      } src="${href}" title="${title}" alt="${text}"/>`;
+      const subText = `<figcaption>${text}</figcaption>`;
+
+      return `<figure><img class="image" src="${href}" title="${title}" alt="${text}"/>${subText}</figure>`;
     };
     renderer.link = function (href, title, text) {
       if (
