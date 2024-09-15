@@ -108,7 +108,7 @@ let WxRenderer = function () {
       return `<code class="codespan">${text}</code>`;
     };
     renderer.listitem = function (text) {
-      return `<span class="listitem"><span style="margin-right: 10px;"><%s/></span>${text}</span>`;
+      return `<span class="listitem"><span style="margin-right: 6px;"><%s/></span>${text}</span>`;
     };
     renderer.list = function (text, ordered, start) {
       text = text.replace(/<\/*p.*?>/g, "");
