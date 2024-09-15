@@ -57,6 +57,32 @@
 .themes.chengxin i code {
   color: #ef7060;
 }
+.themes.mohei {
+  /* Block Elements */
+  /* Inline Elements */
+}
+.themes.mohei p {
+  font-size: 17px;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+}
+.themes.mohei h2 .content {
+  background-color: #5c5c5c;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 1px;
+}
+.themes.mohei hr {
+  border-top: 1px dashed #dddddd;
+}
+.themes.mohei .wx_link {
+  color: #ef7060;
+  border-bottom: 1px solid #ef7060;
+}
+.themes.mohei p code,
+.themes.mohei i code {
+  color: #ef7060;
+}
 .themes h1,
 .themes h2,
 .themes h3,
@@ -127,11 +153,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
-  -webkit-transform-origin: 0 0;
-  -webkit-transform: scale(1, 0.5);
-  transform-origin: 0 0;
-  transform: scale(1, 0.5);
+  border-top: 1px solid rgba(0, 0, 0);
 }
 .themes strong {
   font-weight: bold;
