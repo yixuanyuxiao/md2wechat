@@ -1,8 +1,5 @@
 .themes {
   font-size: 16px;
-  &.default {
-    @import "./0_default.less";
-  }
   &.chengxin {
     @import "./1_chengxin.less";
   }
@@ -188,12 +185,36 @@
     }
   }
 
-  .codepsan,
-  code {
-    font-family: Menlo, Operator Mono, Consolas, Monaco, monospace;
+  // code
+  p code,
+  li code {
+    font-size: 14px;
+    word-wrap: break-word;
+    padding: 2px 4px;
+    border-radius: 4px;
+    margin: 0 2px;
+    color: #1e6bb8;
+    background-color: rgba(27, 31, 35, 0.05);
+    font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;
+    word-break: break-all;
   }
-  .codepsan {
-    white-space: normal;
+  // code,
+  // .codepsan {
+  //   font-family: Menlo, Operator Mono, Consolas, Monaco, monospace;
+  // }
+  // .codespan {
+  //   font-size: 90%;
+  //   color: #d14;
+  //   background: rgba(27, 31, 35, 0.05);
+  //   padding: 3px 5px;
+  //   border-radius: 4px;
+  //   white-space: normal;
+  // }
+
+  // 底部参考资料等
+  .footnotes {
+    margin: 0.5em 8px;
+    font-size: 80%;
   }
 
   // 无衬线

@@ -105,7 +105,7 @@ let WxRenderer = function () {
       );
     };
     renderer.codespan = function (text, infoString) {
-      return `<code class="codespan">${text}</code>`;
+      return `<code>${text}</code>`;
     };
     renderer.listitem = function (text) {
       return `<span class="listitem"><span style="margin-right: 6px;"><%s/></span>${text}</span>`;
