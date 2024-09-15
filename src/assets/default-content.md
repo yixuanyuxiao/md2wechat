@@ -1,3 +1,5 @@
+> 微信公众号排版工具。问题或建议，请关注 `高效开发` 公众号留言。
+
 ## 公众号 Markdown 编辑器
 
 ### 简介
@@ -53,28 +55,13 @@
 **注意：由于微信编辑器限制，复制后若在微信编辑器中点击代码块，会被微信自动重置后它的配色，只能重新再复制**
 
 ```cpp
-#include <stdio.h>
-
-const int MAX = 10;
-int cache[MAX] = {0};
-
-int fib(int x) {
-  if (x == 1) return 1;
-  if (x == 0) return 0;
-  if (cache[x] == 0) {
-    int ret = fib(x - 1) + fib(x - 2);
-    cache[x] = ret;
-  }
-  return cache[x];
-}
-
 int main() {
-    int i;
-    printf("fibonacci series:\n");
-    for (i = 0; i < MAX; ++i) {
-        printf("%d ", fib(i));
-    }
-    return 0;
+  int i;
+  printf("fibonacci series:\n");
+  for (i = 0; i < MAX; ++i) {
+    printf("%d ", fib(i));
+  }
+  return 0;
 }
 ```
 
