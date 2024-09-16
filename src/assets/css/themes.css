@@ -1,7 +1,5 @@
 .themes {
   font-size: 16px;
-  /* BASE styles */
-  /* BASE_BLOCK styles */
   /* h1 - h6 */
 }
 .themes.chengxin {
@@ -82,38 +80,6 @@
 .themes.mohei p code,
 .themes.mohei i code {
   color: #ef7060;
-}
-.themes h1,
-.themes h2,
-.themes h3,
-.themes h4,
-.themes p,
-.themes blockquote,
-.themes .ol,
-.themes .ul,
-.themes .footnotes,
-.themes .listitem,
-.themes .codespan,
-.themes .link,
-.themes .wx_link,
-.themes strong,
-.themes table,
-.themes thead,
-.themes td {
-  text-align: justify;
-  color: #3f3f3f;
-  line-height: 1.6;
-}
-.themes h1,
-.themes h2,
-.themes h3,
-.themes h4,
-.themes p,
-.themes blockquote,
-.themes .ol,
-.themes .ul,
-.themes .footnotes {
-  margin: 1em 8px;
 }
 .themes p {
   font-size: 16px;

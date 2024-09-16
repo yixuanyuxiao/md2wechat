@@ -115,13 +115,13 @@ let WxRenderer = function () {
       let segments = text.split(`<%s/>`);
       if (!ordered) {
         text = segments.join("•");
-        return `<div class="ul">${text}</div>`;
+        return `<p class="ul">${text}</p>`;
       }
       text = segments[0];
       for (let i = 1; i < segments.length; i++) {
         text = text + i + "." + segments[i];
       }
-      return `<div class="ol">${text}</div>`;
+      return `<p class="ol">${text}</p>`;
     };
     renderer.image = function (href, title, text) {
       const subText = `<figcaption>${text}</figcaption>`;
