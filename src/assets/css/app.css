@@ -72,8 +72,8 @@ body {
   padding: 10px;
 }
 
-section {
-  /* height: 100%; */
+section.el-container.is-vertical {
+  height: 100%;
 }
 
 .main-body {
