@@ -119,6 +119,10 @@
 .themes strong {
   font-weight: bold;
 }
+.themes em {
+  font-style: italic;
+  color: black;
+}
 .themes figure {
   margin: 0;
   margin-top: 10px;
@@ -179,6 +183,7 @@
   display: block;
 }
 .themes table {
+  border-collapse: collapse;
   display: table;
   text-align: left;
 }

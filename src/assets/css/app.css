@@ -20,7 +20,7 @@ h6 {
 }
 
 em {
-  font-style: normal !important;
+  font-style: normal;
 }
 
 html,
@@ -118,13 +118,6 @@ section {
   font-size: 14px;
   outline: none;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
-}
-
-.preview table {
-  margin-bottom: 10px;
-  border-collapse: collapse;
-  display: table;
-  width: 100% !important;
 }
 
 /*.preview ul, .preview ol {*/

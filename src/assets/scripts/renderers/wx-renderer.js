@@ -17,7 +17,7 @@ let WxRenderer = function () {
 
   this.buildFootnotes = function () {
     let footnoteArray = footnotes.map(function (x) {
-      return `<section class="footnote-item"><span class="footnote-num">[${x[0]}] </span><p>${x[1]}: <i>${x[2]}</i></p></section>`;
+      return `<section class="footnote-item"><span class="footnote-num">[${x[0]}] </span><p>${x[1]}: <em>${x[2]}</em></p></section>`;
     });
     return `<h3>本文内链接</h3><section class="footnotes">${footnoteArray.join(
       "\n"
@@ -151,7 +151,7 @@ let WxRenderer = function () {
       return `<strong>${text}</strong>`;
     };
     renderer.em = function (text) {
-      return `<span style="font-style: italic;")}>${text}</span>`;
+      return `<em>${text}</em>`;
     };
     renderer.table = function (header, body) {
       return `<table><thead>${header}</thead><tbody>${body}</tbody></table>`;
