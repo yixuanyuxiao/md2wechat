@@ -57,7 +57,6 @@
 }
 .themes.mohei {
   /* Block Elements */
-  /* Inline Elements */
 }
 .themes.mohei p {
   font-size: 17px;
@@ -76,10 +75,6 @@
 .themes.mohei .wx_link {
   color: #ef7060;
   border-bottom: 1px solid #ef7060;
-}
-.themes.mohei p code,
-.themes.mohei i code {
-  color: #ef7060;
 }
 .themes p {
   font-size: 16px;
@@ -222,7 +217,7 @@
 }
 .themes .footnote-item .footnote-num {
   display: inline;
-  width: 10%;
+  flex: 1;
   background: none;
   font-size: 80%;
   opacity: 0.6;
@@ -232,7 +227,7 @@
 .themes .footnote-item p {
   display: inline;
   font-size: 14px;
-  width: 90%;
+  flex: 10;
   padding: 0px;
   margin: 0;
   line-height: 26px;
