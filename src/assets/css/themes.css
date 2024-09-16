@@ -217,9 +217,27 @@
   font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;
   word-break: break-all;
 }
-.themes .footnotes {
-  margin: 0.5em 8px;
+.themes .footnote-item {
+  display: flex;
+}
+.themes .footnote-item .footnote-num {
+  display: inline;
+  width: 10%;
+  background: none;
   font-size: 80%;
+  opacity: 0.6;
+  line-height: 26px;
+  font-family: ptima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.themes .footnote-item p {
+  display: inline;
+  font-size: 14px;
+  width: 90%;
+  padding: 0px;
+  margin: 0;
+  line-height: 26px;
+  color: black;
+  word-break: break-all;
 }
 .themes.fonts-no-cx {
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, PingFangSC-light, PingFangTC-light, "Open Sans", "Helvetica Neue", sans-serif;

@@ -17,14 +17,11 @@ let WxRenderer = function () {
 
   this.buildFootnotes = function () {
     let footnoteArray = footnotes.map(function (x) {
-      if (x[1] === x[2]) {
-        return `<code style="font-size: 90%; opacity: 0.6;">[${x[0]}]</code>: <i>${x[1]}</i><br/>`;
-      }
-      return `<code style="font-size: 90%; opacity: 0.6;">[${x[0]}]</code> ${x[1]}: <i>${x[2]}</i><br/>`;
+      return `<section class="footnote-item"><span class="footnote-num">[${x[0]}] </span><p>${x[1]}: <i>${x[2]}</i></p></section>`;
     });
-    return `<h3>本文内链接</h3><p class="footnotes">${footnoteArray.join(
+    return `<h3>本文内链接</h3><section class="footnotes">${footnoteArray.join(
       "\n"
-    )}</p>`;
+    )}</section>`;
   };
 
   this.buildAddition = function () {
@@ -69,6 +66,7 @@ let WxRenderer = function () {
       }
     };
     renderer.paragraph = function (text) {
+      console.log("====", text);
       if (text.indexOf("<figure>") === 0) {
         return text;
       }
@@ -115,13 +113,13 @@ let WxRenderer = function () {
       let segments = text.split(`<%s/>`);
       if (!ordered) {
         text = segments.join("•");
-        return `<p class="ul">${text}</p>`;
+        return `<section class="ul">${text}</section>`;
       }
       text = segments[0];
       for (let i = 1; i < segments.length; i++) {
         text = text + i + "." + segments[i];
       }
-      return `<p class="ol">${text}</p>`;
+      return `<section class="ol">${text}</section>`;
     };
     renderer.image = function (href, title, text) {
       const subText = `<figcaption>${text}</figcaption>`;

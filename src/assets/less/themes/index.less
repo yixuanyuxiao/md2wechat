@@ -175,9 +175,30 @@
   // }
 
   // 底部参考资料等
-  .footnotes {
-    margin: 0.5em 8px;
-    font-size: 80%;
+  .footnote-item {
+    display: flex;
+
+    .footnote-num {
+      display: inline;
+      width: 10%;
+      background: none;
+      font-size: 80%;
+      opacity: 0.6;
+      line-height: 26px;
+      font-family: ptima-Regular, Optima, PingFangSC-light, PingFangTC-light,
+        "PingFang SC", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    }
+
+    p {
+      display: inline;
+      font-size: 14px;
+      width: 90%;
+      padding: 0px;
+      margin: 0;
+      line-height: 26px;
+      color: black;
+      word-break: break-all;
+    }
   }
 
   // 无衬线
