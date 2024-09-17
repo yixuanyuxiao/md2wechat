@@ -1,3 +1,22 @@
+function extractAllCSSRules() {
+  let allCSS = "";
+
+  // 遍历所有样式表
+  for (let sheet of document.styleSheets) {
+    try {
+      // 遍历样式表中的所有规则
+      for (let rule of sheet.cssRules) {
+        if (rule instanceof CSSStyleRule || rule instanceof CSSMediaRule) {
+          allCSS += rule.cssText + "\n";
+        }
+      }
+    } catch (e) {
+      console.warn("无法访问样式表", sheet.href, e);
+    }
+  }
+  return allCSS;
+}
+
 let app = new Vue({
   el: "#app",
   data: function () {
@@ -113,32 +132,28 @@ let app = new Vue({
       }
     },
     copy: function () {
-      let clipboardDiv = document.getElementById("output");
-      clipboardDiv.focus();
-      window.getSelection().removeAllRanges();
-      let range = document.createRange();
-      range.setStartBefore(clipboardDiv.firstChild);
-      range.setEndAfter(clipboardDiv.lastChild);
-      window.getSelection().addRange(range);
+      const oriHtml = document.getElementById("output").outerHTML;
 
-      try {
-        if (document.execCommand("copy")) {
+      const html = window.inlineCss(oriHtml, extractAllCSSRules());
+
+      // 创建一个带有 HTML 的 ClipboardItem 对象
+      var blob = new Blob([html], { type: "text/html" });
+      var clipboardItem = new ClipboardItem({ "text/html": blob });
+
+      navigator.clipboard
+        .write([clipboardItem])
+        .then(() => {
           this.$message({
             message: "已复制到剪贴板",
             type: "success",
           });
-        } else {
+        })
+        .catch((err) => {
           this.$message({
             message: "未能复制到剪贴板，请全选后右键复制",
             type: "warning",
           });
-        }
-      } catch (err) {
-        this.$message({
-          message: "未能复制到剪贴板，请全选后右键复制",
-          type: "warning",
         });
-      }
     },
     openWindow: function (url) {
       window.open(url);

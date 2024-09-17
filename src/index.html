@@ -150,12 +150,12 @@
                     >点此复制</a
                   >，然后在公众号编辑器粘贴
                 </div>
-                <div class="preview" contenteditable="true">
-                  <div
+                <div class="preview">
+                  <section
                     id="output"
                     v-html="output"
                     :class="['themes', currentTheme, currentFont]"
-                  ></div>
+                  ></section>
                 </div>
               </section>
             </el-col>
@@ -222,6 +222,8 @@
     <script>
       less.watch();
     </script>  -->
+
+    <script src="assets/scripts/juice.js"></script>
 
     <script
       charset="UTF-8"
