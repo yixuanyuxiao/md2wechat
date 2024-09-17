@@ -18,4 +18,12 @@
 
 [本仓库](https://github.com/yanxi123-com/md2wechat) Fork 自 [zkqiang/wechat-mdeditor](https://github.com/zkqiang/wechat-mdeditor) 和 [lyricat/wechat-format](https://github.com/lyricat/wechat-format)，并根据自用需求进行修改开发。
 
+主题样式参考 [Markdown 编辑器](https://markdown.com.cn/editor)。
+
 感谢他们的创意和贡献！
+
+## 开发
+
+```
+yarn start
+```

@@ -871,10 +871,6 @@
   text-decoration: none;
   color: #dda52d;
 }
-.themes.shanchui a:hover {
-  color: #f9bf45;
-  text-decoration: underline;
-}
 .themes.shanchui del {
   color: #d19826;
 }
