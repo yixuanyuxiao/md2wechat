@@ -76,6 +76,134 @@
   color: #ef7060;
   border-bottom: 1px solid #ef7060;
 }
+.themes.chazi {
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  color: #595959;
+}
+.themes.chazi p {
+  margin: 1em 4px;
+}
+.themes.chazi h1 {
+  margin: 1.2em 0 1em;
+  padding: 0;
+  font-weight: bold;
+  color: #773098;
+}
+.themes.chazi h2 {
+  min-height: 32px;
+  line-height: 28px;
+  border-bottom: solid 1px #000000;
+  color: #773098;
+  display: inline-block;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #773098;
+  padding-top: 5px;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  margin-bottom: -3px;
+  font-size: 22px;
+  margin: 1em auto;
+  padding: 0.5em 0;
+  text-align: center;
+  width: 85%;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.themes.chazi h3 {
+  margin: 1.2em 0 1em;
+  padding: 0;
+  font-weight: bold;
+  color: #773098;
+}
+.themes.chazi blockquote {
+  margin: 10px 5px;
+  border-left: 3px solid #9654b5;
+  border-right: 1px solid #9654b5;
+  color: #616161;
+  quotes: none;
+  background: #fbf9fd;
+}
+.themes.chazi blockquote p {
+  margin: 0px;
+  color: black;
+  line-height: 26px;
+}
+.themes.chazi .link {
+  color: #773098;
+  border-bottom: 1px solid #773098;
+}
+.themes.chazi strong {
+  color: #773098;
+}
+.themes.chazi hr {
+  border: 1px solid #773098;
+  margin: 1.5em auto;
+}
+.themes.chazi p code,
+.themes.chazi li code {
+  color: #9654b5;
+}
+.themes.nenqing p {
+  color: #595959;
+}
+.themes.nenqing h1 {
+  color: #595959;
+}
+.themes.nenqing h2 {
+  border-bottom: 2px solid #595959;
+  margin-bottom: 30px;
+  color: #595959;
+}
+.themes.nenqing h2 .content {
+  font-size: 22px;
+  display: inline-block;
+  border-bottom: 2px solid #595959;
+}
+.themes.nenqing h3 {
+  color: #595959;
+}
+.themes.nenqing blockquote {
+  font-style: normal;
+  padding: 10px;
+  position: relative;
+  line-height: 1.8;
+  text-indent: 0;
+  border: none;
+  color: #888;
+}
+.themes.nenqing blockquote:before {
+  content: "“";
+  display: inline;
+  color: #555555;
+  font-size: 4em;
+  font-family: Arial, serif;
+  line-height: 1em;
+  font-weight: 700;
+}
+.themes.nenqing blockquote p {
+  display: inline;
+}
+.themes.nenqing .link {
+  color: #47c1a8;
+  border-bottom: 1px solid #47c1a8;
+}
+.themes.nenqing strong {
+  color: #47c1a8;
+}
+.themes.nenqing em {
+  color: #47c1a8;
+}
+.themes.nenqing p code,
+.themes.nenqing li code {
+  color: #47c1a8;
+}
+.themes.nenqing .footnote-item em {
+  color: black;
+}
 .themes p {
   font-size: 16px;
   padding-top: 8px;
@@ -109,6 +237,7 @@
   font-size: 18px;
 }
 .themes hr {
+  box-sizing: content-box;
   height: 1px;
   margin: 0;
   margin-top: 10px;

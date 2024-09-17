@@ -30,7 +30,7 @@ let app = new Vue({
         { label: "默认主题", value: "default", author: "" },
         { label: "橙心", value: "chengxin", author: "zhning12" },
         { label: "墨黑", value: "mohei", author: "Mayandev" },
-        { label: "婉紫", value: "wanzhi", author: "djmaxwow" },
+        { label: "姹紫", value: "chazi", author: "djmaxwow" },
         { label: "嫩青", value: "nenqing", author: "画手" },
         { label: "绿意", value: "lvyi", author: "夜尽天明" },
         { label: "红绡", value: "hongxiao", author: "HeyRain" },
