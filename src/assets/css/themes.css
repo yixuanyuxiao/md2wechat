@@ -2,10 +2,6 @@
   font-size: 16px;
   /* h1 - h6 */
 }
-.themes.chengxin {
-  /* Block Elements */
-  /* Inline Elements */
-}
 .themes.chengxin h1 {
   font-size: 24px;
   text-align: left;
@@ -42,14 +38,15 @@
   border-left-color: #ef7060;
   background: #fff9f9;
 }
-.themes.chengxin blockquote p {
-  margin: 0px;
-  color: black;
-  line-height: 26px;
-}
-.themes.chengxin .wx_link {
+.themes.chengxin a {
   color: #ef7060;
   border-bottom: 1px solid #ef7060;
+}
+.themes.chengxin .footnote-word {
+  color: #ff3502;
+}
+.themes.chengxin .footnote-ref {
+  color: #ef7060;
 }
 .themes.chengxin p code,
 .themes.chengxin i code {
@@ -69,12 +66,11 @@
   padding: 5px 15px;
   border-radius: 1px;
 }
+.themes.mohei img {
+  border-radius: 5px;
+}
 .themes.mohei hr {
   border-top: 1px dashed #dddddd;
-}
-.themes.mohei .wx_link {
-  color: #ef7060;
-  border-bottom: 1px solid #ef7060;
 }
 .themes.chazi {
   font-size: 15px;
@@ -127,14 +123,15 @@
   quotes: none;
   background: #fbf9fd;
 }
-.themes.chazi blockquote p {
-  margin: 0px;
-  color: black;
-  line-height: 26px;
-}
-.themes.chazi .link {
+.themes.chazi a {
   color: #773098;
   border-bottom: 1px solid #773098;
+}
+.themes.chazi .footnote-word {
+  color: #773098;
+}
+.themes.chazi .footnote-ref {
+  color: #773098;
 }
 .themes.chazi strong {
   color: #773098;
@@ -187,9 +184,15 @@
 .themes.nenqing blockquote p {
   display: inline;
 }
-.themes.nenqing .link {
+.themes.nenqing a {
   color: #47c1a8;
   border-bottom: 1px solid #47c1a8;
+}
+.themes.nenqing .footnote-word {
+  color: #47c1a8;
+}
+.themes.nenqing .footnote-ref {
+  color: #47c1a8;
 }
 .themes.nenqing strong {
   color: #47c1a8;
@@ -203,6 +206,78 @@
 }
 .themes.nenqing .footnote-item em {
   color: black;
+}
+.themes.lvyi {
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  color: #595959;
+}
+.themes.lvyi p {
+  margin: 1em 4px;
+}
+.themes.lvyi h1 {
+  margin: 1.2em 0 1em;
+  padding: 0;
+  font-weight: bold;
+  color: #35b378;
+}
+.themes.lvyi h2 {
+  line-height: 32px;
+  border-bottom: solid 1px #000000;
+  color: #35b378;
+  display: inline-block;
+  border-bottom-width: 0px;
+  border-bottom-style: solid;
+  border-color: #35b378;
+  padding-top: 5px;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  font-size: 23px;
+  margin: 1em 0 0rem 0;
+  padding: 0.5em 0;
+  text-align: leftt;
+  font-weight: bold;
+}
+.themes.lvyi h3 {
+  margin: 1.2em 0 1em;
+  padding: 0;
+  font-weight: bold;
+  color: #35b378;
+}
+.themes.lvyi blockquote {
+  margin: 10px 5px;
+  border-left: 3px solid #35b378;
+  border-right: 0px solid #35b378;
+  color: #616161;
+  quotes: none;
+  background: #fbf9fd;
+}
+.themes.lvyi a {
+  color: #35b378;
+  border-bottom: 1px solid #35b378;
+}
+.themes.lvyi .footnote-word {
+  color: #35b378;
+}
+.themes.lvyi .footnote-ref {
+  color: #35b378;
+}
+.themes.lvyi strong {
+  color: #35b378;
+}
+.themes.lvyi hr {
+  border: 1px solid #35b378;
+  margin: 1.5em auto;
+}
+.themes.lvyi p code,
+.themes.lvyi li code {
+  color: #35b378;
+}
+.themes.lvyi .footnote-word {
+  color: #35b378;
+}
+.themes.lvyi .footnote-ref {
+  color: #35b378;
 }
 .themes p {
   font-size: 16px;
@@ -283,16 +358,26 @@
   margin-bottom: 20px;
   margin-top: 20px;
 }
-.themes .link {
-  padding-bottom: 1px;
-  border-bottom: 1px solid #999;
+.themes blockquote.important p {
+  margin: 0px;
+  color: black;
+  line-height: 26px;
 }
-.themes .wx_link {
+.themes a {
   text-decoration: none;
   color: #1e6bb8;
   word-wrap: break-word;
   font-weight: bold;
   border-bottom: 1px solid #1e6bb8;
+}
+.themes .footnote-word {
+  color: #1e6bb8;
+  font-weight: bold;
+}
+.themes .footnote-ref {
+  color: #1e6bb8;
+  font-weight: bold;
+  font-size: 75%;
 }
 .themes .ol,
 .themes .ul {

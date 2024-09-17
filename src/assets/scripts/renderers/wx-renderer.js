@@ -73,7 +73,7 @@ let WxRenderer = function () {
       return `<p>${text}</p>`;
     };
     renderer.blockquote = function (text) {
-      return `<blockquote>${text}</blockquote>`;
+      return `<blockquote class="important">${text}</blockquote>`;
     };
     renderer.code = function (text, infoString) {
       text = text.replace(/</g, "&lt;");
@@ -131,19 +131,15 @@ let WxRenderer = function () {
         href.indexOf("https://mp.weixin.qq.com") === 0 ||
         href.indexOf("#") === 0
       ) {
-        return `<a href="${href}" title="${
-          title || text
-        }" class="wx_link">${text}</a>`;
+        return `<a href="${href}" title="${title || text}">${text}</a>`;
       } else if (href === text) {
         return text;
       } else {
         if (ENV_USE_REFERENCES) {
           let ref = addFootnote(title || text, href);
-          return `<span class="link">${text}<sup>[${ref}]</sup></span>`;
+          return `<span class="footnote-word">${text}<sup class="footnote-ref">[${ref}]</sup></span>`;
         } else {
-          return `<a href="${href}" title="${
-            title || text
-          }" class="link">${text}</a>`;
+          return `<a href="${href}" title="${title || text}">${text}</a>`;
         }
       }
     };
