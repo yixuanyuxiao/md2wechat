@@ -2,7 +2,7 @@
   "scripts": {
     "start": "npm-run-all --parallel less serve",
     "less": "chokidar 'src/assets/less/**/*.less' -c 'lessc src/assets/less/themes/index.less src/assets/css/themes.css'",
-    "serve": "serve serc"
+    "serve": "serve src -p 8086"
   },
   "devDependencies": {
     "chokidar-cli": "^3.0.0",
