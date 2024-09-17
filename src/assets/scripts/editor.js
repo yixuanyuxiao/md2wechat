@@ -38,7 +38,7 @@ let app = new Vue({
         { label: "蓝莹", value: "lanying", author: "谭松宸" },
         { label: "科技蓝", value: "kejilan", author: "夜尽天明" },
         { label: "兰青", value: "lanqing", author: "Krahets" },
-        { label: "山吹", value: "shanchoi", author: "ElyhG" },
+        { label: "山吹", value: "shanchui", author: "ElyhG" },
         { label: "前端之巅同款", value: "qianduan", author: "HeyRain" },
         { label: "极客黑", value: "jikehei", author: "hyper-xx" },
         { label: "简", value: "jian", author: "aco" },

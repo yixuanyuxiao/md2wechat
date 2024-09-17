@@ -5,10 +5,6 @@ let WxRenderer = function () {
   let footnotes = [];
   let footnoteIndex = 0;
 
-  let merge = function (base, extend) {
-    return Object.assign({}, base, extend);
-  };
-
   let addFootnote = function (title, link) {
     footnoteIndex += 1;
     footnotes.push([footnoteIndex, title, link]);
@@ -19,7 +15,7 @@ let WxRenderer = function () {
     let footnoteArray = footnotes.map(function (x) {
       return `<section class="footnote-item"><span class="footnote-num">[${x[0]}] </span><p>${x[1]}: <em>${x[2]}</em></p></section>`;
     });
-    return `<h3>本文内链接</h3><section class="footnotes">${footnoteArray.join(
+    return `<h3><span class="prefix"></span><span class="content">本文内链接</span><span class="suffix"></span></h3><section class="footnotes">${footnoteArray.join(
       "\n"
     )}</section>`;
   };
@@ -66,7 +62,6 @@ let WxRenderer = function () {
       }
     };
     renderer.paragraph = function (text) {
-      console.log("====", text);
       if (text.indexOf("<figure>") === 0) {
         return text;
       }
