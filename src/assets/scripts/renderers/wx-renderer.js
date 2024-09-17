@@ -1,6 +1,5 @@
 let WxRenderer = function () {
   let ENV_USE_REFERENCES = true;
-  let ENV_STRETCH_IMAGE = true;
 
   let footnotes = [];
   let footnoteIndex = 0;
