@@ -33,7 +33,7 @@ let app = new Vue({
         { label: "姹紫", value: "chazi", author: "djmaxwow" },
         { label: "嫩青", value: "nenqing", author: "画手" },
         { label: "绿意", value: "lvyi", author: "夜尽天明" },
-        { label: "红绡", value: "hongxiao", author: "HeyRain" },
+        { label: "红绯", value: "hongfei", author: "HeyRain" },
         { label: "WeChat-Format", value: "wechat-format", author: "画手" },
         { label: "蓝莹", value: "lanying", author: "谭松宸" },
         { label: "科技蓝", value: "kejilan", author: "夜尽天明" },

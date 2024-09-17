@@ -279,6 +279,139 @@
 .themes.lvyi .footnote-ref {
   color: #35b378;
 }
+.themes.hongfei {
+  font-family: PingFangSC-Light;
+}
+.themes.hongfei p {
+  margin: 10px 10px;
+  line-height: 1.75;
+  letter-spacing: 0.2em;
+  font-size: 14px;
+  word-spacing: 0.1em;
+}
+.themes.hongfei h1 {
+  border-bottom: 2px solid #f83929;
+  font-size: 1.3em;
+}
+.themes.hongfei h1 .content {
+  display: inline-block;
+  font-weight: normal;
+  background: #f83929;
+  color: #ffffff;
+  padding: 3px 10px 1px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  margin-right: 3px;
+}
+.themes.hongfei h2 {
+  text-align: left;
+  margin: 20px 10px 0px 0px;
+}
+.themes.hongfei h2 .content {
+  font-family: STHeitiSC-Light;
+  font-size: 18px;
+  font-weight: bolder;
+  display: inline-block;
+  padding-left: 10px;
+  border-left: 5px solid #f83929;
+}
+.themes.hongfei h3 .content {
+  font-size: 14px;
+  color: #a5d55d;
+}
+.themes.hongfei ul {
+  font-size: 14px;
+}
+.themes.hongfei ol {
+  font-size: 14px;
+}
+.themes.hongfei blockquote {
+  font-style: normal;
+  border-left: none;
+  padding: 10px;
+  position: relative;
+  line-height: 1.8;
+  border-radius: 0px 0px 10px 10px;
+  color: #feeeed;
+  background: #000;
+  box-shadow: #84a1a8 0px 10px 15px;
+}
+.themes.hongfei blockquote:before {
+  content: " ";
+  display: inline;
+  color: #fff;
+  font-size: 4em;
+  font-family: Arial, serif;
+  line-height: 1em;
+  font-weight: 700;
+}
+.themes.hongfei blockquote.important p {
+  color: #feeeed;
+  font-size: 13px;
+  display: inline;
+}
+.themes.hongfei blockquote.important:after {
+  content: "”";
+  float: right;
+  display: inline;
+  color: #fff;
+  font-size: 3em;
+  line-height: 1em;
+  font-weight: 500;
+}
+.themes.hongfei a {
+  color: #f83929;
+  border-bottom: 1px solid #ff3502;
+  font-family: STHeitiSC-Light;
+}
+.themes.hongfei .footnote-word {
+  color: #f83929;
+}
+.themes.hongfei .footnote-ref {
+  color: #f83929;
+}
+.themes.hongfei strong {
+  font-weight: border;
+  color: #f83929;
+}
+.themes.hongfei em {
+  color: #f83929;
+  letter-spacing: 0.3em;
+}
+.themes.hongfei hr {
+  height: 1px;
+  padding: 0;
+  border: none;
+  border-top: medium solidid #333;
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(248, 57, 41, 0), rgba(248, 57, 41, 0.75), rgba(248, 57, 41, 0));
+}
+.themes.hongfei img {
+  border-radius: 0px 0px 5px 5px;
+  display: block;
+  margin: 20px auto;
+  width: 85%;
+  height: 100%;
+  object-fit: contain;
+  box-shadow: #84a1a8 0px 10px 15px;
+}
+.themes.hongfei figcaption {
+  display: block;
+  font-size: 12px;
+  font-family: PingFangSC-Light;
+}
+.themes.hongfei p code,
+.themes.hongfei li code {
+  color: #ff5d6c;
+}
+.themes.hongfei table tr th,
+.themes.hongfei table tr td {
+  font-size: 14px;
+}
+.themes.hongfei .footnote-item em {
+  color: #6e1e51;
+  font-size: 12px;
+}
 .themes p {
   font-size: 16px;
   padding-top: 8px;
@@ -383,7 +516,7 @@
 .themes .ul {
   margin-top: 8px;
   margin-bottom: 8px;
-  padding-left: 15px;
+  padding-left: 25px;
   color: black;
 }
 .themes .listitem {
