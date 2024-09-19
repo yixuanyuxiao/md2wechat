@@ -91,14 +91,14 @@ let app = new Vue({
     if (localStorage.getItem("__editor_content")) {
       this.editor.setValue(localStorage.getItem("__editor_content"));
     } else {
-      this.setDefaultMarkdown();
+      this.setMarkdownContent();
     }
   },
   methods: {
-    setDefaultMarkdown: function () {
+    setMarkdownContent: function (name) {
       axios({
         method: "get",
-        url: "./assets/default-content.md",
+        url: "./assets/md/" + (name || "default") + ".md",
       }).then(function (resp) {
         app.editor.setValue(resp.data);
       });

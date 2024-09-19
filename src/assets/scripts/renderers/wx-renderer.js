@@ -121,11 +121,11 @@ let WxRenderer = function () {
       return `<figure><img class="image" src="${href}" title="${title}" alt="${text}"/>${subText}</figure>`;
     };
     renderer.link = function (href, title, text) {
-      if (
-        href.indexOf("https://mp.weixin.qq.com") === 0 ||
-        href.indexOf("#") === 0
-      ) {
+      if (href.indexOf("https://mp.weixin.qq.com") === 0) {
         return `<a href="${href}" title="${title || text}">${text}</a>`;
+      } else if (href.indexOf("#") === 0) {
+        // 微信公众号不支持锚链接 @2024-09-18
+        return text;
       } else if (href === text) {
         return text;
       } else {

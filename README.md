@@ -27,3 +27,11 @@
 ```
 yarn start
 ```
+
+## 更新记录
+
+- 2024-09-17
+  - 由于公众号不支持锚链接，自动去掉锚链接，只保留文字
+  - 增加 17 个新的主题样式，参考 [Markdown.com.cn](https://markdown.com.cn)
+- 2024-01-01
+  - 上线 [微信公众号 Markdown 编辑器](https://yanxi123.com/md2wechat/)
