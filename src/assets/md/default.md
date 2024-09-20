@@ -69,7 +69,7 @@ Markdown 是一种轻量级的「标记语言」，请阅读下方使用方法�
 
 例如：
 
-1. [这是一篇公众号文章](https://mp.weixin.qq.com/s/4Ctc_AvmgtJVIvIYMvXKzg)
+1. [这是一篇公众号文章](https://mp.weixin.qq.com/s/Y-VUFhY_2RFK6o0S8F0CuA)
 
 2. [这是我的博客地址](https://yanxi123.com/)
 
