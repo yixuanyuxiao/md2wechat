@@ -128,8 +128,8 @@ let WxRenderer = function () {
       } else if (href.indexOf("#") === 0) {
         // 微信公众号不支持锚链接 @2024-09-18
         return text;
-      } else if (href === text) {
-        return text;
+      } else if (href === text && !title) {
+        return `<span class="footnote-word">${text}</span>`;
       } else {
         if (ENV_USE_REFERENCES) {
           let ref = addFootnote(title || text, href);
