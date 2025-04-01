@@ -46,6 +46,7 @@ let app = new Vue({
         { label: "14px", value: "size14", desc: "稍小" },
       ],
       themeOption: [
+        { label: "蔷薇紫", value: "qiangweizi", author: "HeyRain" },
         { label: "默认主题", value: "default", author: "" },
         { label: "橙心", value: "chengxin", author: "zhning12" },
         { label: "墨黑", value: "mohei", author: "Mayandev" },
@@ -61,7 +62,6 @@ let app = new Vue({
         { label: "前端之巅同款", value: "qianduan", author: "HeyRain" },
         { label: "极客黑", value: "jikehei", author: "hyper-xx" },
         { label: "简", value: "jian", author: "aco" },
-        { label: "蔷薇紫", value: "qiangweizi", author: "HeyRain" },
         { label: "萌绿", value: "menglv", author: "koala" },
         { label: "全栈蓝", value: "quanzhanlan", author: "Nealyang" },
       ],
